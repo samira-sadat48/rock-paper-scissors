@@ -24,4 +24,31 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
 
-console.log(computerPlay());
+//Single Round
+function playRound(playerSelection,computerSelection)
+{
+    let results;
+
+    //Add a check for an invalid selection?
+
+    if(playerSelection === computerSelection)
+    {
+        results = `${playerSelection} ties with ${computerSelection}. Play again!`;
+    }
+    else if ((playerSelection === "rock" && computerSelection === "scissors") ||
+             (playerSelection === "paper" && computerSelection === "rock") ||
+             (playerSelection === "scissors" && computerSelection === "paper"))
+    {
+        results = `You win! ${playerSelection} beats ${computerSelection}!`;
+    }
+    else
+    {
+        results = `You lose! ${computerSelection} beats ${playerSelection}`;
+    }
+
+    return results;
+}
+
+const playerSelection = "scissors";
+const computerSelection = computerPlay();
+console.log(playRound(playerSelection,computerSelection));
