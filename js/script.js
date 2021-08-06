@@ -60,11 +60,40 @@ function playRound(playerSelection,computerSelection)
 
 function game(playerSelection, computerSelection)
 {
+    let playerCounter = 0;
+    let computerCounter = 0;
+
     for(i=0;i < 5;i++)
     {
-        const playerSelection = prompt("It's your turn. Rock, Paper, or Scissors?");
-        const computerSelection = computerPlay();
-        console.log(playRound(playerSelection,computerSelection));
+        let playerSelection = prompt("It's your turn! Rock, Paper, or Scissors?");
+        let computerSelection = computerPlay();
+
+        //Single Round Result
+        let roundResultString = playRound(playerSelection,computerSelection);
+
+        if (roundResultString.includes("win"))
+        {
+            playerCounter++;
+        }
+        else if (roundResultString.includes("lose"))
+        {
+            computerCounter++;
+        }
+
+        console.log(roundResultString);
+    }
+    //Entire Game result
+    if(playerCounter > computerCounter)
+    {
+        console.log("You win this game!");
+    }
+    else if (computerCounter > playerCounter)
+    {
+        console.log("You lose this game!");
+    }
+    else
+    {
+        console.log("This game is tied!");
     }
 }
 
