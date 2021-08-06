@@ -29,7 +29,16 @@ function playRound(playerSelection,computerSelection)
 {
     let results;
 
-    //Add a check for an invalid selection?
+    //convert to lowercase so players can enter any case without error
+    playerSelection = playerSelection.toLowerCase();
+
+    //check for an invalid selection
+    if(!((playerSelection == "rock" )||
+       (playerSelection == "scissors") ||
+       (playerSelection == "paper")))
+    {
+        throw `${playerSelection} is not a valid selection! Check spelling and play again.`;
+    }
 
     if(playerSelection === computerSelection)
     {
@@ -49,6 +58,6 @@ function playRound(playerSelection,computerSelection)
     return results;
 }
 
-const playerSelection = "scissors";
+const playerSelection = "Scissors";
 const computerSelection = computerPlay();
 console.log(playRound(playerSelection,computerSelection));
