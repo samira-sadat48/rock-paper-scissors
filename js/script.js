@@ -58,6 +58,14 @@ function playRound(playerSelection,computerSelection)
     return results;
 }
 
-const playerSelection = "Scissors";
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection,computerSelection));
+function game(playerSelection, computerSelection)
+{
+    for(i=0;i < 5;i++)
+    {
+        const playerSelection = prompt("It's your turn. Rock, Paper, or Scissors?");
+        const computerSelection = computerPlay();
+        console.log(playRound(playerSelection,computerSelection));
+    }
+}
+
+game();
