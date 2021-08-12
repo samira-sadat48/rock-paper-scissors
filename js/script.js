@@ -63,9 +63,10 @@ function game(playerSelection, computerSelection)
     let playerCounter = 0;
     let computerCounter = 0;
 
-    for(i=0;i < 5;i++)
+    while((playerCounter !== 5) || (computerCounter !== 5))
     {
-        let playerSelection = prompt("It's your turn! Rock, Paper, or Scissors?");
+        //Change this to be the button feedback
+        //let playerSelection = prompt("It's your turn! Rock, Paper, or Scissors?");
         let computerSelection = computerPlay();
 
         //Single Round Result
@@ -97,4 +98,4 @@ function game(playerSelection, computerSelection)
     }
 }
 
-game();
+//game();
