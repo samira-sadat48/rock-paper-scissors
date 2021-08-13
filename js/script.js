@@ -24,10 +24,13 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
 
-//Single Round
-function playRound(playerSelection,computerSelection)
+//Single Round - changed to an event callback
+function playRound(e)
 {
     let results;
+    let computerSelection = computerPlay();
+    let playerSelection = "rock";//button.textContent; how to get the text from button? id? get text function?
+    console.log("playRound was called");
 
     //convert to lowercase so players can enter any case without error
     playerSelection = playerSelection.toLowerCase();
@@ -99,3 +102,15 @@ function game(playerSelection, computerSelection)
 }
 
 //game();
+//Play a round when a button is clicked
+
+const buttons = document.getElementsByClassName("rps-button");
+
+for(let i = 0; i < buttons.length; i++)
+{
+    buttons[i].addEventListener('click', playRound, false);
+}
+
+
+
+
