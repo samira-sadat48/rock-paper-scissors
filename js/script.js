@@ -29,8 +29,7 @@ function playRound(e)
 {
     let results;
     let computerSelection = computerPlay();
-    let playerSelection = "rock";//button.textContent; how to get the text from button? id? get text function?
-    console.log("playRound was called");
+    let playerSelection = e.currentTarget.innerText;//button.textContent; how to get the text from button? id? get text function?
 
     //convert to lowercase so players can enter any case without error
     playerSelection = playerSelection.toLowerCase();
@@ -58,6 +57,7 @@ function playRound(e)
         results = `You lose! ${computerSelection} beats ${playerSelection}`;
     }
 
+    console.log(results);
     return results;
 }
 
