@@ -44,7 +44,7 @@ function playRound(e)
 
     if(playerSelection === computerSelection)
     {
-        results = `${playerSelection} ties with ${computerSelection}. Play again!`;
+        results = `${playerSelection} ties with ${computerSelection}. TryS again!`;
     }
     else if ((playerSelection === "rock" && computerSelection === "scissors") ||
              (playerSelection === "paper" && computerSelection === "rock") ||
@@ -60,9 +60,10 @@ function playRound(e)
     }
 
     //log the results and scores to the screen
-    
-    console.log(results);
-    return results;
+    document.getElementById("player-score").innerHTML = playerScore;
+    document.getElementById("computer-score").innerHTML = computerScore;
+    document.getElementById("results-string").innerHTML = results;
+  
 }
 
 function game(playerSelection, computerSelection)
@@ -116,8 +117,8 @@ for(let i = 0; i < buttons.length; i++)
     buttons[i].addEventListener('click', playRound, false);
 }
 
-//display the scores
-//trigger game end screen at score = 5
-//reset the game when button is pressed
+//TODO
+//trigger game end screen at score = 5 - eventListener - a score reaches 5
+//reset the game when button is pressed - eventListener - the button is pressed
 
 
