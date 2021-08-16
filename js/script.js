@@ -50,13 +50,17 @@ function playRound(e)
              (playerSelection === "paper" && computerSelection === "rock") ||
              (playerSelection === "scissors" && computerSelection === "paper"))
     {
+        playerScore++;
         results = `You win! ${playerSelection} beats ${computerSelection}!`;
     }
     else
     {
+        computerScore++;
         results = `You lose! ${computerSelection} beats ${playerSelection}`;
     }
 
+    //log the results and scores to the screen
+    
     console.log(results);
     return results;
 }
@@ -103,7 +107,8 @@ function game(playerSelection, computerSelection)
 
 //game();
 //Play a round when a button is clicked
-
+let playerScore = 0;
+let computerScore = 0;
 const buttons = document.getElementsByClassName("rps-button");
 
 for(let i = 0; i < buttons.length; i++)
@@ -111,6 +116,8 @@ for(let i = 0; i < buttons.length; i++)
     buttons[i].addEventListener('click', playRound, false);
 }
 
-
+//display the scores
+//trigger game end screen at score = 5
+//reset the game when button is pressed
 
 

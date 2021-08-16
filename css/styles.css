@@ -12,9 +12,35 @@ body, html{
 }
 
 h1 {
+    font-size: 3.0em;
+}
+
+h1,p {
     text-align:center;
     color: #233E8B;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
+
+.score-board{
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.score-box {
+    width: 10em;
+    height:10em;
+    background-color: #A9F1DF;
+    border-style: solid;
+    border-color: #233E8B;
+    border-width: 0.5em;
+}
+
+.results-display {
+
+}
+
 .rps-buttons{
     display: flex;
     flex: 1;
@@ -22,5 +48,18 @@ h1 {
     justify-content: center;
 }
 .rps-button {
-    
+
 }
+
+#results-string {
+    color: #FFFFC7;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+#player-score, #computer-score {
+    font-size:4.0em;
+    padding: 0;
+    margin: 0;
+}
+
