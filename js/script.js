@@ -44,7 +44,7 @@ function playRound(e)
 
     if(playerSelection === computerSelection)
     {
-        results = `${playerSelection} ties with ${computerSelection}. TryS again!`;
+        results = `${playerSelection} ties with ${computerSelection}. Try again!`;
     }
     else if ((playerSelection === "rock" && computerSelection === "scissors") ||
              (playerSelection === "paper" && computerSelection === "rock") ||
@@ -106,11 +106,41 @@ function game(playerSelection, computerSelection)
     }
 }
 
-//game();
+function gameOver()
+{
+    //Change screen to the game over screen
+        //replace the 3 game buttons with a reset button
+        document.replaceChild(document.getElementById("reset-button"),document.getElementById("rps-buttons"));
+        //report the winner ot the game
+        if(playerScore > computerScore)
+        {
+            document.getElementById("results-string").innerHTML = "You win the game!";
+        }
+        else
+        {
+            document.getElementById("results-string").innerHTML = "You lose the game!";
+        }
+}
+
+function resetGame()
+{
+    playerScore = 0;
+    computerScore = 0;
+    results = "Click a button below to begin.";
+
+    document.getElementById("player-score").innerHTML = playerScore;
+    document.getElementById("computer-score").innerHTML = computerScore;
+    document.getElementById("results-string").innerHTML = results;
+
+    //TODO: replace reset button with three game buttons
+    //document.replaceChild(document.getElementById("rps-buttons"),document.getElementById("reset-button"));
+}
+
 //Play a round when a button is clicked
 let playerScore = 0;
 let computerScore = 0;
 const buttons = document.getElementsByClassName("rps-button");
+const resetButton = document.getElementsByClassName("reset-button");
 
 for(let i = 0; i < buttons.length; i++)
 {
@@ -120,5 +150,7 @@ for(let i = 0; i < buttons.length; i++)
 //TODO
 //trigger game end screen at score = 5 - eventListener - a score reaches 5
 //reset the game when button is pressed - eventListener - the button is pressed
+console.log(resetButton);
+resetButton[0].addEventListener('click',resetGame, false);
 
 

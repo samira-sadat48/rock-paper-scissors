@@ -45,10 +45,16 @@ h1,p {
     display: flex;
     flex: 1;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 .rps-button {
 
+}
+
+.reset-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #results-string {
